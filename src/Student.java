@@ -15,6 +15,11 @@ public class Student implements Comparable<Student>{
 
     private String name, surname;
     private StudentType typStudenta;
+
+    public StudentType getTypStudenta() {
+        return typStudenta;
+    }
+
     private List<Activity> studentActivities = new ArrayList<Activity>();
 
     public void setTypStudenta(StudentType typStudenta) {
@@ -76,5 +81,12 @@ public class Student implements Comparable<Student>{
 
     public void addActivityToList(Activity activity){
         studentActivities.add(activity);
+    }
+    public boolean isStudentActivitiesEmpty(){
+        if(studentActivities.size() == 0) { return true; }
+        else return false;
+    }
+    public int howManyActivitiesStudentHave(){
+        return studentActivities.size();
     }
 }

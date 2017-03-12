@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by staho on 12.03.2017.
@@ -38,9 +39,7 @@ public class University {
     //v
     public void deleteStudentIndex(int x){
         for(int i = 0; i < universityStudents.size(); ++i) {
-            if( universityStudents.get(i).getIid() == x){
-                deleteStudent(universityStudents.get(i));
-            }
+            if( universityStudents.get(i).getIid() == x) deleteStudent(universityStudents.get(i));
         }
     }
 
@@ -51,6 +50,54 @@ public class University {
 
     //vii
     public boolean isStudentAssignedToActivity(Student student, Activity activity){
-
+        return activity.isStudentAssigned(student);
     }
+
+    //viii
+    public Queue<Student> notAssignedStudentsQueue(){
+        Queue<Student> tempStudentQueue = new ConcurrentLinkedQueue<Student>();
+        for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
+            Student temp = student.next();
+            if(temp.isStudentActivitiesEmpty()) tempStudentQueue.add(temp);
+        }
+
+        return tempStudentQueue;
+    }
+
+    //ix
+    public Stack<Student> studentsWithNActivities(int n){
+        Stack<Student> tempStudentStack = new Stack<Student>();
+        for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
+            Student temp = student.next();
+            if(temp.howManyActivitiesStudentHave() == n) tempStudentStack.push(temp);
+        }
+        return tempStudentStack;
+    }
+
+    //x
+    public Student studentWithMaxNoOfActivities(){
+        Comparator<Student> cmp = (o1, o2) -> Integer.compare(o1.howManyActivitiesStudentHave(), o2.howManyActivitiesStudentHave());
+        return Collections.max(universityStudents, cmp);
+    }
+
+    //xi
+    public Map<StudentType, Integer> mapOfParticularStudentTypes(){
+        Map<StudentType, Integer> tempMap = new HashMap<>();
+        tempMap.put(StudentType.STATIONARY, new Integer(0));
+        tempMap.put(StudentType.NONSTATIONARY, new Integer(0));
+        tempMap.put(StudentType.POSTGRADUATE, new Integer(0));
+
+        for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
+            Student temp = student.next();
+            int studentTypeCount = tempMap.get(temp.getTypStudenta());
+            tempMap.put(temp.getTypStudenta(), new Integer(studentTypeCount + 1));
+        }
+
+        return tempMap;
+    }
+
+    //xii
+    //public void printStudentsAlphabetically(){
+      //  universityStudents.sort();
+  //  }
 }

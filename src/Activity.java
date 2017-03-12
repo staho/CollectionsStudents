@@ -5,11 +5,7 @@ import java.util.*;
 
 public class Activity {
     private String name;
-    private Set<Student> assignedStudents;
-
-    {
-        assignedStudents = new TreeSet<Student>();
-    }
+    private Set<Student> assignedStudents = new TreeSet<Student>();
 
     public Activity(String name) {
         this.name = name;
@@ -22,5 +18,8 @@ public class Activity {
     }
     public void deleteAllStudentsFromSet(){
         assignedStudents.clear();
+    }
+    public boolean isStudentAssigned(Student student){
+        return assignedStudents.contains(student);
     }
 }
