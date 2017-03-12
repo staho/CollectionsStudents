@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="628cb196-ae38-4651-84f2-74693570eead" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Activity.java" afterPath="$PROJECT_DIR$/src/Activity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Student.java" afterPath="$PROJECT_DIR$/src/Student.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/University.java" afterPath="$PROJECT_DIR$/src/University.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Student.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            <state relative-caret-position="594">
+              <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -80,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="University.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="University.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/University.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+            <state relative-caret-position="25">
+              <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#201#210#0" expanded="true" />
@@ -94,10 +91,6 @@
                 <element signature="method#deleteStudent#0;class#University#0" expanded="false" />
                 <element signature="method#deleteStudentIndex#0;class#University#0" expanded="false" />
                 <element signature="method#isStudentAssignedToActivity#0;class#University#0" expanded="false" />
-                <element signature="method#notAssignedStudentsQueue#0;class#University#0" expanded="false" />
-                <element signature="e#1711#1720#0" expanded="true" />
-                <element signature="method#studentsWithNActivities#0;class#University#0" expanded="false" />
-                <element signature="e#2106#2115#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -628,12 +621,12 @@
       <workItem from="1489319917228" duration="107000" />
       <workItem from="1489320034536" duration="819000" />
       <workItem from="1489320919362" duration="8017000" />
-      <workItem from="1489334994569" duration="7440000" />
+      <workItem from="1489334994569" duration="7975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17703000" />
+    <option name="totallyTimeSpent" value="18238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,7 +639,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -780,10 +773,6 @@
             <element signature="method#deleteStudent#0;class#University#0" expanded="false" />
             <element signature="method#deleteStudentIndex#0;class#University#0" expanded="false" />
             <element signature="method#isStudentAssignedToActivity#0;class#University#0" expanded="false" />
-            <element signature="method#notAssignedStudentsQueue#0;class#University#0" expanded="false" />
-            <element signature="e#1711#1720#0" expanded="true" />
-            <element signature="method#studentsWithNActivities#0;class#University#0" expanded="false" />
-            <element signature="e#2106#2115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -929,10 +918,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/University.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#201#210#0" expanded="true" />
+            <element signature="e#278#288#0" expanded="true" />
+            <element signature="method#addStudent#0;class#University#0" expanded="false" />
+            <element signature="method#addStudentToActivity#0;class#University#0" expanded="false" />
+            <element signature="method#deleteStudent#0;class#University#0" expanded="false" />
+            <element signature="method#deleteStudentIndex#0;class#University#0" expanded="false" />
+            <element signature="method#isStudentAssignedToActivity#0;class#University#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="73" column="34" lean-forward="false" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+        <state relative-caret-position="594">
+          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -944,27 +950,6 @@
             <element signature="e#2289#2290#0" expanded="true" />
             <element signature="e#2475#2476#0" expanded="true" />
             <element signature="e#2522#2523#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/University.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#201#210#0" expanded="true" />
-            <element signature="e#278#288#0" expanded="true" />
-            <element signature="method#addStudent#0;class#University#0" expanded="false" />
-            <element signature="method#addStudentToActivity#0;class#University#0" expanded="false" />
-            <element signature="method#deleteStudent#0;class#University#0" expanded="false" />
-            <element signature="method#deleteStudentIndex#0;class#University#0" expanded="false" />
-            <element signature="method#isStudentAssignedToActivity#0;class#University#0" expanded="false" />
-            <element signature="method#notAssignedStudentsQueue#0;class#University#0" expanded="false" />
-            <element signature="e#1711#1720#0" expanded="true" />
-            <element signature="method#studentsWithNActivities#0;class#University#0" expanded="false" />
-            <element signature="e#2106#2115#0" expanded="true" />
           </folding>
         </state>
       </provider>

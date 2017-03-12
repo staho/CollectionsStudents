@@ -55,7 +55,7 @@ public class University {
 
     //viii
     public Queue<Student> notAssignedStudentsQueue(){
-        Queue<Student> tempStudentQueue = new ConcurrentLinkedQueue<Student>();
+        Queue<Student> tempStudentQueue = new ConcurrentLinkedQueue<>();
         for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
             Student temp = student.next();
             if(temp.isStudentActivitiesEmpty()) tempStudentQueue.add(temp);
@@ -66,7 +66,7 @@ public class University {
 
     //ix
     public Stack<Student> studentsWithNActivities(int n){
-        Stack<Student> tempStudentStack = new Stack<Student>();
+        Stack<Student> tempStudentStack = new Stack<>();
         for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
             Student temp = student.next();
             if(temp.howManyActivitiesStudentHave() == n) tempStudentStack.push(temp);
