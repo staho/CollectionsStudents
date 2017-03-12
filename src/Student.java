@@ -8,19 +8,25 @@ import java.util.Scanner;
 public class Student implements Comparable<Student>{
     private static int id;
     private int iid;
+    private String name, surname;
+    private StudentType typStudenta;
+    private List<Activity> studentActivities = new ArrayList<Activity>();
 
     public int getIid() {
         return iid;
     }
 
-    private String name, surname;
-    private StudentType typStudenta;
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
 
     public StudentType getTypStudenta() {
         return typStudenta;
     }
-
-    private List<Activity> studentActivities = new ArrayList<Activity>();
 
     public void setTypStudenta(StudentType typStudenta) {
         this.typStudenta = typStudenta;
@@ -65,6 +71,11 @@ public class Student implements Comparable<Student>{
             }
         }
 
+    }
+
+    public Student(String xxx) {
+        this.name = new String("Cos nie tak");
+        this.surname = xxx;
     }
 
     @Override

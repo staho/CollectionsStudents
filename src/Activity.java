@@ -5,8 +5,11 @@ import java.util.*;
 
 public class Activity {
     private String name;
-    private Set<Student> assignedStudents = new TreeSet<Student>();
+    private Set<Student> assignedStudents = new TreeSet<>();
 
+    public Set<Student> getAssignedStudents() {
+        return assignedStudents;
+    }
     public Activity(String name) {
         this.name = name;
     }

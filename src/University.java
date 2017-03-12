@@ -5,9 +5,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Created by staho on 12.03.2017.
  */
 public class University {
-    private List<Student> universityStudents = new ArrayList<Student>();
+    private List<Student> universityStudents = new ArrayList<>();
 
-    private List<Activity> univeristyActivities = new ArrayList<Activity>();
+    private List<Activity> universityActivities = new ArrayList<>();
 
     //i
     public void addStudent(String name, String surname, StudentType type){
@@ -19,7 +19,7 @@ public class University {
 
     //ii
     public void addActivity(String name){
-        univeristyActivities.add(new Activity(name));
+        universityActivities.add(new Activity(name));
     }
 
     //iii
@@ -31,8 +31,8 @@ public class University {
     //iv
     public void deleteStudent(Student student){
         universityStudents.remove(student);
-        for(int i = 0; i < univeristyActivities.size(); ++i){
-            univeristyActivities.get(i).deleteStudentFromSet(student);
+        for(int i = 0; i < universityActivities.size(); ++i){
+            universityActivities.get(i).deleteStudentFromSet(student);
         }
     }
 
@@ -97,7 +97,46 @@ public class University {
     }
 
     //xii
-    //public void printStudentsAlphabetically(){
-      //  universityStudents.sort();
-  //  }
+    public void printStudentsAlphabetically(){
+        Comparator<Student> cmp = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                int compared = o1.getSurname().compareTo(o2.getSurname());
+                if(compared == 0) {
+                    compared = o1.getName().compareTo(o2.getName());
+                }
+                return compared;
+            }
+        };
+        universityStudents.sort(cmp);
+        for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
+            Student temp = student.next();
+            System.out.println(temp.getSurname() + " " + temp.getName() + " IID: " + temp.getIid());
+        }
+
+    }
+
+    //xiii
+    public boolean doesActivitiesHaveTheSameStudents(Activity activity1, Activity activity2){
+        return Collections.disjoint(activity1.getAssignedStudents(), activity2.getAssignedStudents());
+    }
+
+    //additional methods
+    public Activity getActivityFromList(int index){
+        if(index > 0 && index <= universityActivities.size()){
+            return universityActivities.get(index - 1);
+        }
+        else {
+            return new Activity("Kappa :v - zły index");
+        }
+    }
+
+    public Student getStudentFromList(int index){
+        if(index > 0 && index <= universityStudents.size()){
+            return universityStudents.get(index - 1);
+        }
+        else {
+            return new Student("Kappa :v - zły index");
+        }
+    }
 }
