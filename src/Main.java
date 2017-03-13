@@ -2,6 +2,11 @@
  * Created by staho on 12.03.2017.
  */
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * All specification to this project you can find under following address
  * http://home.agh.edu.pl/~kbzowski/JAVA/LAB2.pdf
@@ -62,15 +67,38 @@ public class Main {
         if(isStudentAssigned) System.out.println("Student z indeksem 2 jest przypisany do zajęć z indeksem 3");
         else System.out.println("Student z indeksem 2 nie jest przypisany do zajęć z indeksem 3");
 
+        //viii
+        System.out.println("Kolejka nieprzypisanych studentow");
+        Queue<Student> notAssignedStudentsQueue = university.getNotAssignedStudentsQueue();
+
+        for(Student student : notAssignedStudentsQueue) university.printStudent(student);
+
+        //ix
+        System.out.println("Stos studentów zapisanych na 2 zajęcia");
+        Stack<Student> studentsWithNActivities = university.getStudentsWithNActivities(2);
+
+        for (Student student : studentsWithNActivities) university.printStudent(student); //I know it's stack perhaps just pop it maybe?
+
         //x
         System.out.print("Student z najwieksza liczba zajec to: ");
         university.printStudent(university.studentWithMaxNoOfActivities());
 
+        //xi
+        System.out.println("Hashmapa typów studentów");
+        Map<StudentType, Integer> hashMapOfParticularStudentTypes = university.getHashMapOfParticularStudentTypes();
+        for(StudentType type : hashMapOfParticularStudentTypes.keySet()){
+            System.out.println("Typ studenta: " + type.toString() + " ilosc: " + hashMapOfParticularStudentTypes.get(type));
+        }
+
         //xii
+        System.out.println("Lista studentow alfabetycznie");
         university.printStudentsAlphabetically();
 
-
-
+        //xiii
+        System.out.println("Czy zajecia z indeksem 4 i 3 mają wspólnych studentów");
+        boolean isThereCommonStudentsOnActivities = university.doesActivitiesHaveTheSameStudents(university.getActivityFromList(3), university.getActivityFromList(4));
+        if(isThereCommonStudentsOnActivities) System.out.println("Maja");
+        else System.out.println("Nie maja");
 
 
     }

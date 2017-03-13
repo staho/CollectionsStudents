@@ -54,7 +54,7 @@ public class University {
     }
 
     //viii
-    public Queue<Student> notAssignedStudentsQueue(){
+    public Queue<Student> getNotAssignedStudentsQueue(){
         Queue<Student> tempStudentQueue = new ConcurrentLinkedQueue<>();
         for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
             Student temp = student.next();
@@ -65,11 +65,11 @@ public class University {
     }
 
     //ix
-    public Stack<Student> studentsWithNActivities(int n){
+    public Stack<Student> getStudentsWithNActivities(int activitiesCount){
         Stack<Student> tempStudentStack = new Stack<>();
         for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
             Student temp = student.next();
-            if(temp.howManyActivitiesStudentHave() == n) tempStudentStack.push(temp);
+            if(temp.howManyActivitiesStudentHave() == activitiesCount) tempStudentStack.push(temp);
         }
         return tempStudentStack;
     }
@@ -81,7 +81,7 @@ public class University {
     }
 
     //xi
-    public Map<StudentType, Integer> mapOfParticularStudentTypes(){
+    public Map<StudentType, Integer> getHashMapOfParticularStudentTypes(){
         Map<StudentType, Integer> tempMap = new HashMap<>();
         tempMap.put(StudentType.STATIONARY, new Integer(0));
         tempMap.put(StudentType.NONSTATIONARY, new Integer(0));

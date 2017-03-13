@@ -19,6 +19,10 @@ public enum StudentType {
         public  String toString(){
             return "postgraduate";
         }
+    };
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
     }
 }
 
