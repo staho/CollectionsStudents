@@ -37,9 +37,9 @@ public class University {
     }
 
     //v
-    public void deleteStudentIndex(int x){
+    public void deleteStudentIndex(int index){
         for(int i = 0; i < universityStudents.size(); ++i) {
-            if( universityStudents.get(i).getIid() == x) deleteStudent(universityStudents.get(i));
+            if( universityStudents.get(i).getIid() == index) deleteStudent(universityStudents.get(i));
         }
     }
 
@@ -102,9 +102,7 @@ public class University {
             @Override
             public int compare(Student o1, Student o2) {
                 int compared = o1.getSurname().compareTo(o2.getSurname());
-                if(compared == 0) {
-                    compared = o1.getName().compareTo(o2.getName());
-                }
+                if(compared == 0) compared = o1.getName().compareTo(o2.getName());
                 return compared;
             }
         };
@@ -138,5 +136,8 @@ public class University {
         else {
             return new Student("Kappa :v - zły index");
         }
+    }
+    public void printStudent(Student student){
+        System.out.println(student.getSurname() + " " + student.getName() + " IID: " + student.getIid());
     }
 }
