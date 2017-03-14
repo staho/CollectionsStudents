@@ -83,14 +83,14 @@ public class University {
     //xi
     public Map<StudentType, Integer> getHashMapOfParticularStudentTypes(){
         Map<StudentType, Integer> tempMap = new HashMap<>();
-        tempMap.put(StudentType.STATIONARY, new Integer(0));
-        tempMap.put(StudentType.NONSTATIONARY, new Integer(0));
-        tempMap.put(StudentType.POSTGRADUATE, new Integer(0));
-
-        for (Iterator<Student> student = universityStudents.iterator(); student.hasNext();) {
-            Student temp = student.next();
-            int studentTypeCount = tempMap.get(temp.getTypStudenta());
-            tempMap.put(temp.getTypStudenta(), new Integer(studentTypeCount + 1));
+        for (Student temp: universityStudents) {
+            if(!tempMap.containsKey(temp.getTypStudenta())){
+                tempMap.put(temp.getTypStudenta(), new Integer(1));
+            }
+            else{
+                int studentTypeCount = tempMap.get(temp.getTypStudenta());
+                tempMap.put(temp.getTypStudenta(), new Integer(studentTypeCount + 1));
+            }
         }
 
         return tempMap;
@@ -116,7 +116,7 @@ public class University {
 
     //xiii
     public boolean doesActivitiesHaveTheSameStudents(Activity activity1, Activity activity2){
-        return Collections.disjoint(activity1.getAssignedStudents(), activity2.getAssignedStudents());
+        return !Collections.disjoint(activity1.getAssignedStudents(), activity2.getAssignedStudents());
     }
 
     //additional methods

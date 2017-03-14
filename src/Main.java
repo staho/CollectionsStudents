@@ -36,6 +36,8 @@ public class Main {
         university.addStudent("Wiktoria","Brzeczyszczykiewicz", StudentType.STATIONARY);
         university.addStudent("Michalina", "Duda", StudentType.NONSTATIONARY);
 
+        university.addStudent("Ala", "Kotowska", StudentType.POSTGRADUATE);
+
         //iii
         university.addStudentToActivity(university.getStudentFromList(1), university.getActivityFromList(1));
         university.addStudentToActivity(university.getStudentFromList(1), university.getActivityFromList(2));
@@ -64,38 +66,38 @@ public class Main {
 
         //vii
         boolean isStudentAssigned = university.isStudentAssignedToActivity(university.getStudentFromList(2), university.getActivityFromList(3));
-        if(isStudentAssigned) System.out.println("Student z indeksem 2 jest przypisany do zajęć z indeksem 3");
-        else System.out.println("Student z indeksem 2 nie jest przypisany do zajęć z indeksem 3");
+        if(isStudentAssigned) System.out.println("\nStudent z indeksem 2 jest przypisany do zajęć z indeksem 3");
+        else System.out.println("\nStudent z indeksem 2 nie jest przypisany do zajęć z indeksem 3");
 
         //viii
-        System.out.println("Kolejka nieprzypisanych studentow");
+        System.out.println("\nKolejka nieprzypisanych studentow");
         Queue<Student> notAssignedStudentsQueue = university.getNotAssignedStudentsQueue();
 
         for(Student student : notAssignedStudentsQueue) university.printStudent(student);
 
         //ix
-        System.out.println("Stos studentów zapisanych na 2 zajęcia");
+        System.out.println("\nStos studentów zapisanych na 2 zajęcia");
         Stack<Student> studentsWithNActivities = university.getStudentsWithNActivities(2);
 
         for (Student student : studentsWithNActivities) university.printStudent(student); //I know it's stack perhaps just pop it maybe?
 
         //x
-        System.out.print("Student z najwieksza liczba zajec to: ");
+        System.out.print("\nStudent z najwieksza liczba zajec to: ");
         university.printStudent(university.studentWithMaxNoOfActivities());
 
         //xi
-        System.out.println("Hashmapa typów studentów");
+        System.out.println("\nHashmapa typów studentów");
         Map<StudentType, Integer> hashMapOfParticularStudentTypes = university.getHashMapOfParticularStudentTypes();
         for(StudentType type : hashMapOfParticularStudentTypes.keySet()){
             System.out.println("Typ studenta: " + type.toString() + " ilosc: " + hashMapOfParticularStudentTypes.get(type));
         }
 
         //xii
-        System.out.println("Lista studentow alfabetycznie");
+        System.out.println("\nLista studentow alfabetycznie");
         university.printStudentsAlphabetically();
 
         //xiii
-        System.out.println("Czy zajecia z indeksem 4 i 3 mają wspólnych studentów");
+        System.out.println("\nCzy zajecia z indeksem 4 i 3 mają wspólnych studentów");
         boolean isThereCommonStudentsOnActivities = university.doesActivitiesHaveTheSameStudents(university.getActivityFromList(3), university.getActivityFromList(4));
         if(isThereCommonStudentsOnActivities) System.out.println("Maja");
         else System.out.println("Nie maja");
